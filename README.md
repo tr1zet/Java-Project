@@ -32,6 +32,27 @@
 ***
 
 ## 📊 ER-диаграмма (Mermaid)
+```mermaid
+erDiagram
+    CITY ||--o{ WEATHER_FORECAST : has
+    
+    CITY {
+        int id PK
+        string name "Название города"
+        double latitude "Широта"
+        double longitude "Долгота"
+        timestamp last_selected_at "Дата последнего выбора"
+    }
 
+    WEATHER_FORECAST {
+        int id PK
+        int city_id FK "Ссылка на CITY"
+        date date "Дата прогноза"
+        double temp_avg "Средняя температура"
+        double temp_min "Минимальная температура"
+        double temp_max "Максимальная температура"
+        string description "Краткое описание погоды"
+        string icon_code "Код иконки OpenWeatherMap"
+    }
+```
 
-<img width="586" height="591" alt="image" src="https://github.com/user-attachments/assets/5f90c0e1-dfd0-48b6-a37d-1be3c06be7e1" />
