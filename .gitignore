@@ -1,7 +1,0 @@
-target/
-*.class
-*.db
-weather.db
-*.log
-.idea/
-*.iml
