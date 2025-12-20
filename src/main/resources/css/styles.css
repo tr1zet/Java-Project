@@ -1,0 +1,177 @@
+/* Основные стили приложения */
+.root {
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+/* Стили для кнопок */
+.button {
+    -fx-background-color: #3498DB;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5;
+    -fx-padding: 10 20;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 2);
+}
+
+.button:hover {
+    -fx-background-color: #2980B9;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 8, 0, 0, 3);
+}
+
+.button:pressed {
+    -fx-background-color: #21618C;
+}
+
+/* Стили для текстовых полей */
+.text-field {
+    -fx-background-color: white;
+    -fx-border-color: #BDC3C7;
+    -fx-border-radius: 5;
+    -fx-border-width: 1;
+    -fx-padding: 10;
+    -fx-font-size: 14px;
+}
+
+.text-field:focused {
+    -fx-border-color: #3498DB;
+    -fx-border-width: 2;
+    -fx-effect: dropshadow(gaussian, rgba(52, 152, 219, 0.3), 5, 0, 0, 1);
+}
+
+/* Стили для списка предложений */
+.list-view {
+    -fx-background-color: white;
+    -fx-border-color: #BDC3C7;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+
+.list-cell {
+    -fx-padding: 10;
+    -fx-font-size: 14px;
+    -fx-background-color: transparent;
+}
+
+.list-cell:filled:hover {
+    -fx-background-color: #EBF5FB;
+    -fx-cursor: hand;
+}
+
+.list-cell:filled:selected {
+    -fx-background-color: #3498DB;
+    -fx-text-fill: white;
+}
+
+/* Стили для меток погоды */
+.label {
+    -fx-text-fill: #2C3E50;
+}
+
+/* Стили для контейнера прогноза */
+.forecast-day {
+    -fx-padding: 10;
+    -fx-background-color: rgba(255, 255, 255, 0.7);
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: #D5DBDB;
+    -fx-border-width: 1;
+}
+
+.forecast-day:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.9);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0, 0, 1);
+}
+
+.forecast-day-label {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2C3E50;
+    -fx-min-width: 100;
+}
+
+.forecast-temp {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #E74C3C;
+    -fx-min-width: 80;
+}
+
+.forecast-desc {
+    -fx-font-size: 14px;
+    -fx-text-fill: #7F8C8D;
+    -fx-wrap-text: true;
+}
+
+/* Стили для алертов */
+.dialog-pane {
+    -fx-background-color: white;
+    -fx-border-color: #BDC3C7;
+    -fx-border-radius: 10;
+}
+
+.dialog-pane .header-panel {
+    -fx-background-color: #3498DB;
+}
+
+.dialog-pane .content.label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #2C3E50;
+}
+
+/* Стили для индикатора загрузки */
+.progress-indicator {
+    -fx-progress-color: #3498DB;
+}
+
+/* Анимация для плавного появления */
+.fade-in {
+    -fx-opacity: 0;
+    -fx-transition: opacity 0.5s;
+}
+
+.fade-in.show {
+    -fx-opacity: 1;
+}
+
+/* Стили для скроллбаров */
+.scroll-bar:vertical {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:vertical .thumb {
+    -fx-background-color: #BDC3C7;
+    -fx-background-radius: 5;
+}
+
+.scroll-bar:vertical .thumb:hover {
+    -fx-background-color: #95A5A6;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .text-field {
+        -fx-pref-width: 300px;
+    }
+
+    .button {
+        -fx-pref-width: 100px;
+    }
+}
+
+/* Темная тема (дополнительно) */
+.root.dark-theme {
+    -fx-background-color: #2C3E50;
+}
+
+.root.dark-theme .label {
+    -fx-text-fill: #ECF0F1;
+}
+
+.root.dark-theme .button {
+    -fx-background-color: #1ABC9C;
+}
+
+.root.dark-theme .button:hover {
+    -fx-background-color: #16A085;
+}
