@@ -1,4 +1,4 @@
-package main.java.com.teamweather.model;
+package com.teamweather.model;
 
 public class City {
     private int id; // ID в базе данных
