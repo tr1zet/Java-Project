@@ -2,10 +2,10 @@ package test.java.com.teamweather.service;
 
 
 
-import main.java.com.teamweather.exception.WeatherException;
-import main.java.com.teamweather.model.Weather;
-import main.java.com.teamweather.service.DatabaseService;
-import main.java.com.teamweather.service.WeatherService;
+import com.teamweather.exception.WeatherException;
+import com.teamweather.model.Weather;
+import com.teamweather.service.DatabaseService;
+import com.teamweather.service.WeatherService;
 import javafx.application.Platform;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;

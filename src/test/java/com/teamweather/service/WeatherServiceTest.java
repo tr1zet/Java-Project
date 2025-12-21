@@ -2,10 +2,10 @@ package test.java.com.teamweather.service;
 
 
 
-import main.java.com.teamweather.exception.CityNotFoundException;
-import main.java.com.teamweather.exception.WeatherException;
-import main.java.com.teamweather.model.City;
-import main.java.com.teamweather.model.Weather;
+import com.teamweather.exception.CityNotFoundException;
+import com.teamweather.exception.WeatherException;
+import com.teamweather.model.City;
+import com.teamweather.model.Weather;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

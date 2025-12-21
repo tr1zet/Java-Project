@@ -1,4 +1,4 @@
-package main.java.com.teamweather.model;
+package com.teamweather.model;
 
 import java.time.Instant;
 import java.time.LocalDateTime;

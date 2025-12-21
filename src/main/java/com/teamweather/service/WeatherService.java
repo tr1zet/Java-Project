@@ -1,10 +1,10 @@
-package main.java.com.teamweather.service;
+package com.teamweather.service;
 
-import main.java.com.teamweather.Config;
-import main.java.com.teamweather.exception.CityNotFoundException;
-import main.java.com.teamweather.exception.WeatherException;
-import main.java.com.teamweather.model.City;
-import main.java.com.teamweather.model.Weather;
+import com.teamweather.Config;
+import com.teamweather.exception.CityNotFoundException;
+import com.teamweather.exception.WeatherException;
+import com.teamweather.model.City;
+import com.teamweather.model.Weather;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.slf4j.Logger;

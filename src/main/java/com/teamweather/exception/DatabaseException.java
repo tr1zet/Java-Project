@@ -1,4 +1,4 @@
-package main.java.com.teamweather.exception;
+package com.teamweather.exception;
 
 
 public class DatabaseException extends WeatherException {

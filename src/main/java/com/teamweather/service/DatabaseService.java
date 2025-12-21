@@ -1,13 +1,11 @@
-package main.java.com.teamweather.service;
+package com.teamweather.service;
 
-import main.java.com.teamweather.Config;
-import main.java.com.teamweather.exception.DatabaseException;
-import main.java.com.teamweather.model.City;
+import com.teamweather.exception.DatabaseException;
+import com.teamweather.model.City;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.sql.*;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -111,9 +109,9 @@ public class DatabaseService {
      */
     public City getLastSelectedCity() throws DatabaseException {
         String sql = """
-            SELECT name, country, state, latitude, longitude
-            FROM cities
-            ORDER BY last_selected DESC
+            SELECT name, country, state, latitude, longitude 
+            FROM cities 
+            ORDER BY last_selected DESC 
             LIMIT 1
             """;
 
@@ -147,9 +145,9 @@ public class DatabaseService {
     public List<City> getSearchHistory() throws DatabaseException {
         List<City> history = new ArrayList<>();
         String sql = """
-            SELECT name, country, state, latitude, longitude
-            FROM cities
-            ORDER BY last_selected DESC
+            SELECT name, country, state, latitude, longitude 
+            FROM cities 
+            ORDER BY last_selected DESC 
             LIMIT 10
             """;
 
@@ -176,6 +174,31 @@ public class DatabaseService {
     }
 
     /**
+     * Получение ID города из базы данных
+     * Возвращает -1 если город не найден или произошла ошибка
+     */
+    private int getCityId(City city) {
+        String sql = "SELECT id FROM cities WHERE name = ? AND latitude = ? AND longitude = ?";
+
+        try (PreparedStatement pstmt = connection.prepareStatement(sql)) {
+            pstmt.setString(1, city.getName());
+            pstmt.setDouble(2, city.getLatitude());
+            pstmt.setDouble(3, city.getLongitude());
+
+            try (ResultSet rs = pstmt.executeQuery()) {
+                if (rs.next()) {
+                    return rs.getInt("id");
+                }
+            }
+        } catch (SQLException e) {
+            logger.error("Ошибка при получении ID города", e);
+            return -1;
+        }
+
+        return -1;
+    }
+
+    /**
      * Сохранение погоды в историю
      */
     public void saveWeatherToHistory(com.teamweather.model.Weather weather, City city) throws DatabaseException {
@@ -189,8 +212,8 @@ public class DatabaseService {
         }
 
         String sql = """
-            INSERT INTO weather_history
-            (city_id, temperature, feels_like, temp_min, temp_max, humidity,
+            INSERT INTO weather_history 
+            (city_id, temperature, feels_like, temp_min, temp_max, humidity, 
              pressure, wind_speed, description, icon_code)
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """;
@@ -217,27 +240,6 @@ public class DatabaseService {
     }
 
     /**
-     * Получение ID города из базы данных
-     */
-    private int getCityId(City city) throws SQLException {
-        String sql = "SELECT id FROM cities WHERE name = ? AND latitude = ? AND longitude = ?";
-
-        try (PreparedStatement pstmt = connection.prepareStatement(sql)) {
-            pstmt.setString(1, city.getName());
-            pstmt.setDouble(2, city.getLatitude());
-            pstmt.setDouble(3, city.getLongitude());
-
-            try (ResultSet rs = pstmt.executeQuery()) {
-                if (rs.next()) {
-                    return rs.getInt("id");
-                }
-            }
-        }
-
-        return -1;
-    }
-
-    /**
      * Закрытие подключения к базе данных
      */
     public void close() {
@@ -257,8 +259,8 @@ public class DatabaseService {
     public List<com.teamweather.model.Weather> getWeatherHistory(City city, int limit) throws DatabaseException {
         List<com.teamweather.model.Weather> history = new ArrayList<>();
         String sql = """
-            SELECT wh.temperature, wh.feels_like, wh.temp_min, wh.temp_max,
-                   wh.humidity, wh.pressure, wh.wind_speed,
+            SELECT wh.temperature, wh.feels_like, wh.temp_min, wh.temp_max, 
+                   wh.humidity, wh.pressure, wh.wind_speed, 
                    wh.description, wh.icon_code, wh.timestamp
             FROM weather_history wh
             JOIN cities c ON wh.city_id = c.id

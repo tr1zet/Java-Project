@@ -1,8 +1,8 @@
 package test.java.com.teamweather.service;
 
 
-import main.java.com.teamweather.exception.DatabaseException;
-import main.java.com.teamweather.model.City;
+import com.teamweather.exception.DatabaseException;
+import com.teamweather.model.City;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
