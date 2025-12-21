@@ -1,11 +1,11 @@
-package main.java.com.teamweather.controller;
+package com.teamweather.controller;
 
-import main.java.com.teamweather.exception.CityNotFoundException;
-import main.java.com.teamweather.exception.WeatherException;
-import main.java.com.teamweather.model.City;
-import main.java.com.teamweather.model.Weather;
-import main.java.com.teamweather.service.DatabaseService;
-import main.java.com.teamweather.service.WeatherService;
+import com.teamweather.exception.CityNotFoundException;
+import com.teamweather.exception.WeatherException;
+import com.teamweather.model.City;
+import com.teamweather.model.Weather;
+import com.teamweather.service.DatabaseService;
+import com.teamweather.service.WeatherService;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -14,6 +14,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,4 +1,4 @@
-package main.java.com.teamweather;
+package com.teamweather;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
