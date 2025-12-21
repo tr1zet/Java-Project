@@ -9,8 +9,12 @@
       xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="com.teamweather.controller.MainController"
       spacing="20"
-      style="-fx-background-color: linear-gradient(to bottom, #87CEEB, #E0F7FF);"
-      padding="20">
+      style="-fx-background-color: linear-gradient(to bottom, #87CEEB, #E0F7FF);">
+
+    <!-- Исправленный padding -->
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
 
     <!-- Заголовок приложения -->
     <HBox alignment="CENTER" spacing="10">
@@ -40,7 +44,11 @@
     </VBox>
 
     <!-- Основная информация о погоде -->
-    <BorderPane style="-fx-background-color: rgba(255, 255, 255, 0.9); -fx-background-radius: 15; -fx-padding: 20;">
+    <BorderPane style="-fx-background-color: rgba(255, 255, 255, 0.9); -fx-background-radius: 15;">
+        <padding>
+            <Insets top="20" right="20" bottom="20" left="20"/>
+        </padding>
+
         <top>
             <Label fx:id="cityNameLabel"
                    text="Выберите город"
@@ -93,7 +101,11 @@
 
         <VBox fx:id="forecastContainer"
               spacing="10"
-              style="-fx-background-color: rgba(255, 255, 255, 0.9); -fx-background-radius: 15; -fx-padding: 20;">
+              style="-fx-background-color: rgba(255, 255, 255, 0.9); -fx-background-radius: 15;">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
             <!-- Прогноз будет добавляться динамически -->
             <Label text="Прогноз появится после выбора города"
                    style="-fx-font-size: 14px; -fx-text-fill: #7F8C8D; -fx-font-style: italic;"/>

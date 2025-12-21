@@ -1,2 +1,5 @@
 .idea
 SemestrovayJava.iml
+weather.db
+target
+/target/
