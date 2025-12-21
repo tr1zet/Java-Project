@@ -1,4 +1,4 @@
-package main.java.com.teamweather;
+package com.teamweather;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
